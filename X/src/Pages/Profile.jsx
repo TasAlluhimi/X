@@ -1,18 +1,16 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
 import NavBar from '../Components/NavBar'
 import Ads from '../Components/Ads'
 
-function Home() {
+function Profile() {
 
     const user = localStorage.getItem('user')
     const userData = JSON.parse(user)
     const [isLogged, setIsLogged] = React.useState(localStorage.getItem('isLogged'))
-
     
   return (
     <>
-        <div className='max-sm:flex max-sm:flex-col md:grid max-md:grid lg:grid lg:grid-cols-12'>
+        <div className='max-sm:flex md:grid max-md:grid lg:grid lg:grid-cols-12'>
             {/* menu  */}
             
              <div className='max-sm: md:flex max-md:flex lg:flex md:flex-col max-md:flex-col 
@@ -42,4 +40,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Profile

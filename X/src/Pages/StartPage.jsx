@@ -1,7 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
+import axios from 'axios'
 
 // reminder for me 
 // mockapi account 
@@ -13,12 +12,14 @@ function StartPage() {
     const navigate = useNavigate()
     const [isLogged, setIsLogged] = React.useState(localStorage.getItem('isLogged'))
 
-    if (isLogged) {
-        navigate('/Home')
-    } 
+    // if (isLogged) {
+    //     navigate('/Home')
+    // } 
+
     // else {
     //     navigate('/Home')
     // }
+
 
   return (
     <>
@@ -51,142 +52,28 @@ function StartPage() {
                     <div>or</div>
                     <div className='bg-slate-800 rounded-full h-1 w-40'></div>
                 </div>
-
-                {/* popups now  */}
-                <div className='flex flex-col items-center justify-center bg-black border-black'>
-            {/* <h4>Popup - GeeksforGeeks</h4> */}
-            <Popup trigger=
-                {<button class="px-16 rounded-3xl py-2 border flex gap-2 border-slate-200 dark:border-slate-700  hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 bg-sky-300 text-black dark:hover:text-slate-300 hover:shadow transition duration-150">
+                <button 
+                onClick={()=>{navigate('/SignUp')}}
+                class="px-16 rounded-3xl py-2 border flex gap-2 border-slate-200 dark:border-slate-700  hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 bg-sky-300 text-black dark:hover:text-slate-300 hover:shadow transition duration-150">
                 
                 <span className='font-bold'>Create account</span>
-            </button>} 
-                modal nested>
-                {
-                    close => (
-                        <div className='modal bg-black border-black flex-col flex justify-center items-center'>
-                            <div className='content text-white text-3xl p-5'>
-                                Create your account
-                            </div>
-                            <div className='flex-col flex gap-5'>
-
-                            <input 
-                                type="text" 
-                                name='username'
-                                // value={}
-                                placeholder='Username'
-                                className='bg-black border py-3 px-8 text-white rounded-lg'
-                                />
-
-                            <input 
-                                type="email" 
-                                name='email'
-                                // value={}
-                                placeholder='Email'
-                                className='bg-black border py-3 px-8 text-white rounded-lg'
-                                />
-
-                            <input 
-                                type="password" 
-                                name='password'
-                                // value={}
-                                placeholder='Password'
-                                className='bg-black border py-3 px-8 text-white rounded-lg'
-                                />
-
-                            </div>
-
-                            <div className='mt-10'>
-                            <button 
-                                    class="px-40 rounded-3xl py-2 border flex gap-2 border-slate-200 dark:border-slate-700  hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 bg-sky-300 text-black dark:hover:text-slate-300 hover:shadow transition duration-150">
-                                                            
-                                    <span className='font-bold'>Create account</span>
-                                </button>
-                            </div>
-                            <div>
-                                <button onClick=
-                                    {() => close()}>
-                                        Close modal
-                                </button>
-                            </div>
-                        </div>
-                    )
-                }
-            </Popup>
+            </button>
             <p className='text-xs'>By signing up, you agree to the Terms of Service and Privacy<br/> Policy, including Cookie Use.</p>
         </div>
-            </div>
-                
-            <p className='text-white mt-10'>Already have an account?</p>
-
-            <div className='flex flex-col items-center justify-center'>
-            {/* <h4>Popup - GeeksforGeeks</h4> */}
-            <Popup trigger=
-                {<button class="px-24 rounded-3xl py-2 border flex gap-2 border-slate-200 dark:border-slate-700  hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 bg-black text-blue-300 dark:hover:text-slate-300 hover:shadow transition duration-150">
+        <p className='text-white mt-10'>Already have an account?</p>
+            <button 
+            onClick={()=>{navigate('/SignIn')}}
+            class="px-24 rounded-3xl py-2 border flex gap-2 border-slate-200 dark:border-slate-700  hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 bg-black text-blue-300 dark:hover:text-slate-300 hover:shadow transition duration-150">
                 
                 <span className='font-bold'>Sign in</span>
-            </button>} 
-                modal nested>
-                {
-                    close => (
-                        <div className='modal'>
-                            <div className='modal bg-black border-black flex-col flex justify-center items-center'>
-                            <div className='content text-white text-3xl p-5'>
-                                Create your account
-                            </div>
-                            <div className='flex-col flex gap-5'>
-
-                            <input 
-                                type="text" 
-                                name='username'
-                                // value={}
-                                placeholder='Username'
-                                className='bg-black border py-3 px-8 text-white rounded-lg'
-                                />
-
-                            <input 
-                                type="email" 
-                                name='email'
-                                // value={}
-                                placeholder='Email'
-                                className='bg-black border py-3 px-8 text-white rounded-lg'
-                                />
-
-{/* <input 
-                                type="password" 
-                                name='password'
-                                // value={}
-                                placeholder='Password'
-                                className='bg-black border py-3 px-8 text-white rounded-lg'
-                                /> */}
-
-                            </div>
-
-                            <div className='mt-10'>
-                            <button 
-                                    class="px-40 rounded-3xl py-2 border flex gap-2 border-slate-200 dark:border-slate-700  hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 bg-sky-300 text-black dark:hover:text-slate-300 hover:shadow transition duration-150">
-                                                            
-                                    <span className='font-bold'>Sign in</span>
-                                </button>
-                            </div>
-                            {/* <div> */}
-                                <button onClick=
-                                    {() => close()}>
-                                        Close modal
-                                </button>
-                            </div>
-                        </div>
-                    )
-                }
-            </Popup>
-            
-        </div>
+            </button>
             </div>
-            
+          </div>
         </div>
         <div>
 
         </div>
-    </div>
+    {/* </div> */}
     </>
   )
 }
