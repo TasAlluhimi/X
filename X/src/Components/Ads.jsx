@@ -23,7 +23,7 @@ function Ads() {
 </div>
 
         <div className='text-white mt-5 bg-[rgb(22,24,28)] p-3 rounded-2xl'>
-            <div className='text-xl'>Subscribe to Premium</div>
+            <div className='text-xl font-bold'>Subscribe to Premium</div>
             <div>Subscribe to unlock new features and if eligible, receive a share of ads revenue.</div>
             <button class="self-center md:px-3 lg:px-6 rounded-3xl py-1.5 mt-5 border flex gap-2 border-slate-200 
              dark:border-slate-700  hover:border-slate-400 dark:hover:border-slate-500 
