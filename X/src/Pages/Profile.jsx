@@ -76,7 +76,7 @@ const [tweets, setTweets] = React.useState([])
             {/* menu  */}
             
              <div className='max-sm: md:flex max-md:flex lg:flex md:flex-col max-md:flex-col 
-             lg:flex-col border lg:col-span-3
+             lg:flex-col lg:col-span-3
              lg:h-screen lg:px-28'>
                 <NavBar/>
 
@@ -85,8 +85,8 @@ const [tweets, setTweets] = React.useState([])
 
             {/* main  */}
             <div className='max-sm: md:flex max-md:flex lg:flex md:flex-col 
-            max-md:flex-col lg:flex-col border lg:col-span-5
-            lg:h-screen w-full'>
+            max-md:flex-col lg:flex-col lg:col-span-5
+            lg:h-screen w-full border-l-2'>
 
 <div
     class="w-[41.5vw] bg-black shadow-xl rounded-lg text-gray-900">
@@ -141,15 +141,15 @@ text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
     </li>
     <li class="me-10">
         <a href="#" class="inline-block p-4 rounded-t-lg hover:text-gray-600 
-        hover:bg-gray-900 dark:hover:text-gray-300">Dashboard</a>
+        hover:bg-gray-900 dark:hover:text-gray-300">Replies</a>
     </li>
     <li class="me-10">
         <a href="#" class="inline-block p-4 rounded-t-lg hover:text-gray-600
-        hover:bg-gray-900 dark:hover:text-gray-300">Settings</a>
+        hover:bg-gray-900 dark:hover:text-gray-300">Hielights</a>
     </li>
     <li class="me-10">
         <a href="#" class="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-900 
-         dark:hover:text-gray-300">Contacts</a>
+         dark:hover:text-gray-300">Media</a>
     </li>
     <li>
         <Link to="/Likes" class="inline-block p-4 rounded-t-lg hover:text-gray-600 
@@ -243,7 +243,7 @@ text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
 
             {/* ads  */}
             <div className='max-sm: md:flex max-md:flex lg:flex md:flex-col max-md:flex-col 
-            lg:flex-col border lg:col-span-4
+            lg:flex-col border-l-2 lg:col-span-4
             lg:h-screen p-5'>
                 <Ads/>
             </div>
