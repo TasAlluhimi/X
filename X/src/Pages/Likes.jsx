@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 // email: tutaxx@gmail.com
 // pass: 123456a 
 
-function Profile() {
+function Likes() {
 
     const user = localStorage.getItem('user')
     const userData = JSON.parse(user)
@@ -21,7 +21,7 @@ const [tweets, setTweets] = React.useState([])
     const post = ()=>{
         if (isLogged) {
             if (tweet.trim() !== '') {
-                axios.post(`https://65796afff08799dc8046e2ef.mockapi.io/tweets`, {
+                axios.post(`https://657ab4661acd268f9afba392.mockapi.io/likes`, {
                     userId: userData.id,
                     username: userData.username,
                     tweet: tweet,
@@ -36,8 +36,16 @@ const [tweets, setTweets] = React.useState([])
         
     }
 
+    const unLike = (id)=>{
+        axios.delete(`https://657ab4661acd268f9afba392.mockapi.io/likes/${id}`, {
+                })
+                .then(
+                    console.log('like')
+                )
+    }
+
     const getData = ()=>{
-        axios.get(`https://65796afff08799dc8046e2ef.mockapi.io/tweets`)
+        axios.get(`https://657ab4661acd268f9afba392.mockapi.io/likes`)
         .then(res=>{
             console.log(res.data);
             const t = res.data.filter((item)=>
@@ -45,25 +53,6 @@ const [tweets, setTweets] = React.useState([])
             console.log(t);
             setTweets(t);
         })
-    }
-
-    const del = (id)=>{
-        axios.delete(`https://65796afff08799dc8046e2ef.mockapi.io/tweets/${id}`)
-        .then(res=>{
-            console.log(res.data);
-            console.log('deleted hehe');
-        })
-    }
-
-    const Like = (item)=>{
-        axios.post(`https://657ab4661acd268f9afba392.mockapi.io/likes`, {
-                    username: item.username,
-                    tweet: item.tweet,
-                    userId: userData.id
-                })
-                .then(
-                    console.log('like')
-                )
     }
 
     React.useEffect(()=>{
@@ -136,8 +125,8 @@ const [tweets, setTweets] = React.useState([])
 <ul class="flex text-sm font-medium text-center w-full 
 text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
     <li class="me-10 ml-7">
-        <a href="#" aria-current="page" class="inline-block p-4 text-blue-600 hover:bg-gray-900 
-        rounded-t-lg active dark:text-blue-500">Profile</a>
+        <Link to="/Profile" class="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-900 
+         dark:hover:text-gray-300">Profile</Link>
     </li>
     <li class="me-10">
         <a href="#" class="inline-block p-4 rounded-t-lg hover:text-gray-600 
@@ -152,8 +141,8 @@ text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
          dark:hover:text-gray-300">Contacts</a>
     </li>
     <li>
-        <Link to="/Likes" class="inline-block p-4 rounded-t-lg hover:text-gray-600 
-        hover:bg-gray-900 dark:hover:bg-gray-800 dark:hover:text-gray-300">Likes</Link>
+        <Link to="/Likes" href="#" aria-current="page" class="inline-block p-4 text-blue-600 hover:bg-gray-900 
+        rounded-t-lg active dark:text-blue-500">Likes</Link>
     </li>
 </ul>
 
@@ -201,7 +190,7 @@ text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
                     
             </div>
 
-                    <div className='ml-16 mr-3 flex text-white'>
+                    <div className='text-white ml-16 mr-3 flex'>
                         {item.tweet}
                     </div>
 
@@ -220,11 +209,12 @@ text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
                         <path d="M4.5 3.88l4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5c-2.209 0-4-1.79-4-4V7.55L1.432 9.48.068 8.02 4.5 3.88zM16.5 6H11V4h5.5c2.209 0 4 1.79 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2z"/>
                         </svg>
 
-                        <svg onClick={()=>{Like(item)}} xmlns="http://www.w3.org/2000/svg" fill="white" 
+                        <svg onClick={()=>{unLike(item.id)}} xmlns="http://www.w3.org/2000/svg" fill="red" 
                         className="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-1nao33i r-lwhw9o r-cnnz9e
                         w-4" viewBox="0 0 24 24">
-                        <path d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 6.01 8.526 5.44 7.304 5.5c-1.243.07-2.349.78-2.91 1.91-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.129 6.61 3.87-2.34 6.052-4.64 7.126-6.61 1.111-2.04 1.03-3.7.477-4.82-.561-1.13-1.666-1.84-2.908-1.91zm4.187 7.69c-1.351 2.48-4.001 5.12-8.379 7.67l-.503.3-.504-.3c-4.379-2.55-7.029-5.19-8.382-7.67-1.36-2.5-1.41-4.86-.514-6.67.887-1.79 2.647-2.91 4.601-3.01 1.651-.09 3.368.56 4.798 2.01 1.429-1.45 3.146-2.1 4.796-2.01 1.954.1 3.714 1.22 4.601 3.01.896 1.81.846 4.17-.514 6.67z"/>
+                        <path d="M20.884 13.19c-1.351 2.48-4.001 5.12-8.379 7.67l-.503.3-.504-.3c-4.379-2.55-7.029-5.19-8.382-7.67-1.36-2.5-1.41-4.86-.514-6.67.887-1.79 2.647-2.91 4.601-3.01 1.651-.09 3.368.56 4.798 2.01 1.429-1.45 3.146-2.1 4.796-2.01 1.954.1 3.714 1.22 4.601 3.01.896 1.81.846 4.17-.514 6.67z"/>
                         </svg>
+                     
 
                         <svg xmlns="http://www.w3.org/2000/svg" fill="white" 
                         className="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-1nao33i r-lwhw9o r-cnnz9e
@@ -252,4 +242,4 @@ text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
   )
 }
 
-export default Profile
+export default Likes

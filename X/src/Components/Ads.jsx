@@ -3,9 +3,9 @@ import React from 'react'
 function Ads() {
   return (
     <>
-        <div className='felx flex-col justify-center items-start w-[80%]'>
+        <div className='felx flex-col justify-center items-start w-[80%] '>
             
-<div>   
+<div className=''>   
     <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only 
     ">Search</label>
     <div class="relative">

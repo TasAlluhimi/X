@@ -5,6 +5,8 @@ import StartPage from '../Pages/StartPage'
 import SignIn from '../Pages/SignIn'
 import SignUp from '../Pages/SignUp'
 import Profile from '../Pages/Profile'
+import Likes from '../Pages/Likes'
+import Error from '../Errors/Error'
 
 function Route() {
   return (
@@ -15,6 +17,8 @@ function Route() {
             <R path='/SignUp' element={<SignUp/>}></R>
             <R path='/SignIn' element={<SignIn/>}></R>
             <R path='/Profile' element={<Profile/>}></R>
+            <R path='/Likes' element={<Likes/>}></R>
+            <R path='/*' element={<Error/>}></R>
         </Routes>
     </>
   )

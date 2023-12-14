@@ -15,10 +15,10 @@ function NavBar() {
     }
   return (
     <>
-        <div className='max-sm:flex text-white'>
+        <div className='max-sm:flex text-white fixed max-sm:invisible lg:visible md:invisible max-md:invisible'>
             {/* menu  */}
             <div className='md:flex md:flex-col max-sm:w-screen max-md:flex max-md:flex-col lg:flex 
-            lg:flex-col border flex flex-col max-sm:justify-center max-sm:items-center
+            lg:flex-col flex flex-col max-sm:justify-center max-sm:items-center
             h-screen max-md:w-fit md:w-fit max-md:justify-center md:items-center'>
                 <div>
                     <ul className='flex flex-col lg:gap-5 gap-3'>
@@ -50,7 +50,7 @@ function NavBar() {
                         </li>
                         </NavLink>
                         
-                        <NavLink to='/'
+                        <NavLink to=''
                         style={({ isActive }) => ({
                             fontWeight: isActive
                                 ? "bold"
@@ -66,7 +66,7 @@ function NavBar() {
                         </li>
                         </NavLink>
 
-                        <NavLink to='/'
+                        <NavLink to=''
                         style={({ isActive }) => ({
                             fontWeight: isActive
                                 ? "bold"
@@ -82,7 +82,7 @@ function NavBar() {
                         </li>
                         </NavLink>
 
-                        <NavLink to='/'
+                        <NavLink to=''
                         style={({ isActive }) => ({
                             fontWeight: isActive
                                 ? "bold"
@@ -98,7 +98,7 @@ function NavBar() {
                         </li>
                         </NavLink>
 
-                        <NavLink to='/'
+                        <NavLink to=''
                         style={({ isActive }) => ({
                             fontWeight: isActive
                                 ? "bold"
@@ -114,7 +114,7 @@ function NavBar() {
                         </li>
                         </NavLink>
 
-                        <NavLink to='/'
+                        <NavLink to=''
                         style={({ isActive }) => ({
                             fontWeight: isActive
                                 ? "bold"
@@ -130,7 +130,7 @@ function NavBar() {
                         </li>
                         </NavLink>
 
-                        <NavLink to='/'
+                        <NavLink to=''
                         style={({ isActive }) => ({
                             fontWeight: isActive
                                 ? "bold"
@@ -162,7 +162,7 @@ function NavBar() {
                         </li>
                         </NavLink>
 
-                        <NavLink to='/'
+                        <NavLink to=''
                         style={({ isActive }) => ({
                             fontWeight: isActive
                                 ? "bold"
@@ -200,7 +200,7 @@ function NavBar() {
                         <Popup trigger=
                             {<button onClick={log_out}>
                             <div className='flex justify-start items-end gap-3'>
-                                    <img src="https://s3.amazonaws.com/kd4/rickie"
+                                    <img src="https://cdn.discordapp.com/attachments/1118278449967149078/1184772567987400714/IMG_0389.png?ex=658d3070&is=657abb70&hm=9223350ce66b359d352b63737a32ff6040f0743094ec58157d4575706ec15a79&"
                                     alt="" 
                                     className='rounded-full w-12'
                                     />
