@@ -25,13 +25,13 @@ function StartPage() {
     <>
     <div>
         <div className='max-sm:flex-col max-md:flex-col md:flex-col lg:grid lg:grid-cols-12 h-screen'>
-            <div className='lg:col-span-6 lg:flex lg:justify-center lg:items-center border'>
+            <div className='lg:col-span-6 lg:flex lg:justify-center lg:items-center'>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="white" className="bi bi-twitter-x max-sm:w-20 max-md:w-20 md:w-20 lg:w-80" viewBox="0 0 16 16">
                 <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
                 </svg>
             </div>
 
-            <div className='lg:col-span-6 lg:flex-col lg:flex h-full lg:justify-center lg:items-center border text-white'>
+            <div className='lg:col-span-6 lg:flex-col lg:flex h-full lg:justify-center lg:items-center  text-white'>
                 <div className='max-sm:text-4xl max-md:text-6xl md:text-6xl lg:text-7xl font-bold' >Happening now</div>
                 <div className='text-left mr-80 mt-10 mb-10 text-xl'>Join today.</div>
 
