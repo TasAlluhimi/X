@@ -31,7 +31,7 @@ function StartPage() {
                 </svg>
             </div>
 
-            <div className='lg:col-span-6 lg:flex-col lg:flex h-full lg:justify-center lg:items-center  text-white'>
+            <div className='lg:col-span-6 lg:flex-col lg:flex h-full justify-center items-center  text-white'>
                 <div className='max-sm:text-4xl max-md:text-6xl md:text-6xl lg:text-7xl font-bold' >Happening now</div>
                 <div className='text-left mr-80 mt-10 mb-10 text-xl'>Join today.</div>
 
@@ -60,13 +60,15 @@ function StartPage() {
             </button>
             <p className='text-xs'>By signing up, you agree to the <span className='text-[rgb(29,155,240)]'>Terms of Service</span> and <span className='text-[rgb(29,155,240)]'>Privacy<br/> Policy</span>, including Cookie Use.</p>
         </div>
-        <p className='text-white mt-10'>Already have an account?</p>
+       <div className='flex justify-center items-center flex-col'>
+       <p className='text-white mt-10'>Already have an account?</p>
             <button 
             onClick={()=>{navigate('/SignIn')}}
             class="px-24 rounded-3xl py-2 border flex gap-2 border-slate-200 dark:border-slate-700  hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 bg-black text-blue-300 dark:hover:text-slate-300 hover:shadow transition duration-150">
                 
                 <span className='font-bold text-[rgb(29,155,240)]'>Sign in</span>
             </button>
+       </div>
             </div>
           </div>
         </div>
